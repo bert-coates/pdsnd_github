@@ -22,7 +22,7 @@ def get_filters():
 
     print('\n', '#'*42, '\nHello! Let\'s explore some US bikeshare data!', '\n', '#'*42)
     
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington)
     city = input('\nPlease enter the city you would like to filter by: \n').lower()
     while city not in CITY_DATA.keys():
         city = input("\nSorry, we don't hold data for that city. Please select another city from the available cities: Chicago, New York City, Washington \n").lower()
@@ -110,15 +110,15 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    #  display the most common month
     mode_month = '\nThe most common month is {}'.format(df['Month'].mode()[0])
     print(mode_month)
 
-    # TO DO: display the most common day of week
+    #  display the most common day of week
     mode_day = '\nThe most common day is {}'.format(df['Day'].mode()[0])
     print(mode_day)
 
-    # TO DO: display the most common start hour
+    #  display the most common start hour
     if df['Hour'].mode()[0] < 10:
         mode_hour_start = '\nThe most common time to start a hire period is between 0{}00-0{}59'.format(df['Hour'].mode()[0],df['Hour'].mode()[0])
     else:
@@ -135,16 +135,16 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # display most commonly used start station
     mode_origin = '\nThe most common starting station is {}'.format(df['Start Station'].mode()[0])
     print(mode_origin)
     
 
-    # TO DO: display most commonly used end station
+    # display most commonly used end station
     mode_destination = '\nThe most common destination station is {}'.format(df['End Station'].mode()[0])
     print(mode_destination)
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # display most frequent combination of start station and end station trip
     df['Route'] = df['Start Station'] + ' to ' +  df['End Station']
     mode_combo = '\nThe most common combination of start station and end station is {}'.format(df['Route'].mode()[0])
     print(mode_combo)
@@ -159,11 +159,11 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    #  display total travel time
     total_trip_duration = '\nTotal travel time was %s hours' % (df['Trip Duration'].sum()/3600)
     print(total_trip_duration)
 
-    # TO DO: display mean travel time
+    #  display mean travel time
     mean_trip_duration = '\nMean travel time was %s minutes' % (df['Trip Duration'].mean()/60)
     print(mean_trip_duration)
 
@@ -177,7 +177,7 @@ def user_stats(df):
     print('\nCalculating User Stats...')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    #  Display counts of user types
     try:
         user_types = df.groupby(['User Type']).size().sort_values(ascending=False)
         print('\n')
@@ -186,7 +186,7 @@ def user_stats(df):
         print('\nThere is no user type data recorded for this dataset') 
     
 
-    # TO DO: Display counts of gender
+    #  Display counts of gender
     try:
         gender_count = df.groupby(['Gender']).size().sort_values(ascending=False)
         print('\n')
@@ -194,7 +194,7 @@ def user_stats(df):
     except:
         print('\nThere is no gender data recorded for this dataset')
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    #  Display earliest, most recent, and most common year of birth
     try:
         oldest_user = int(df['Birth Year'].min())
         youngest_user = int(df['Birth Year'].max())
@@ -209,6 +209,7 @@ def user_stats(df):
     print('-'*40)
 
 def clear():
+    """ determines the current operating system, then clears the screen for a cleaner interface """
     current_os = platform.system()
     if current_os == 'Linux':
         os.system('clear')
