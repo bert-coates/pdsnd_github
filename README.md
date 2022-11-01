@@ -1,17 +1,25 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Bert's Bikeshare Analysis Tool (Bert's BAT)
+
+## Description
+This script will run analysis on bikeshare data provided as part of the Udacity Python for Data Science Nano Degree course.
+
+## Requirements
+This tool was written using Python version 3.6; it may work with other versions, but this has not been tested.
 
 ### Date created
-Include the date you created this project and README file.
-
-### Project Title
-Replace the Project Title
-
-### Description
-Describe what your project is about and what it does
+Created 31/10/2022 by Bert Coates
 
 ### Files used
-Include the files used
+The main script file is bikeshare.py
+Data files can be downloaded from [Motivate](https://www.motivateco.com/).
+The tool currently only works for Washington, New York City, and Chicago.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Many thanks to Udacity for their supportive training and template structures.
 
+This project utilises the following Python libraries:
+* Platform
+* OS
+* Time
+* Pandas
+* Numpy 
