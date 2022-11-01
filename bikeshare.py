@@ -20,7 +20,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
 
-    print('\n', '#'*42, '\nHello! Let\'s explore some US bikeshare data!', '\n', '#'*42)
+    print('\n', '#'*42, '\nHello! Let\'s explore some US bikeshare data using Bert\'s BAT!', '\n', '#'*42)
     
     # get user input for city (chicago, new york city, washington)
     city = input('\nPlease enter the city you would like to filter by: \n').lower()
@@ -266,7 +266,7 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
         if restart.lower() != 'yes':
             print('#' * 42)
-            print('\nThanks for using my bikeshare data analysis tool today!\n')
+            print("\nThanks for using Bert's BAT  today!\n")
             print('#' * 42)
             break
 
