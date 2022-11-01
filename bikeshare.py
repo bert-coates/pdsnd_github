@@ -224,10 +224,10 @@ def raw_data_display(df):
     # Sets to display all columns where screen size is too small for full table
     pd.set_option('max_columns', None)
     while True:
-    print(df.sample(5))
-    view_more = input("Do you want to see more raw data? Type 'yes' to see more")
-    if view_more != "yes":
-        break
+        print(df.sample(5))
+        view_more = input("Do you want to see more raw data? Type 'yes' to see more")
+        if view_more != "yes":
+            break
    
 
 def main():
