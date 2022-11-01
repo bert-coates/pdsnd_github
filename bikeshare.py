@@ -3,6 +3,7 @@ import os
 import time
 import pandas as pd
 import numpy as np
+from art import tprint
 
 # Python and Pandas documentation has been heavily utilised alongside Udacity learning materials during the production of this tool.
 
@@ -19,7 +20,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-
+    tprint("Bert's BAT")
     print('\n', '#'*42, '\nHello! Let\'s explore some US bikeshare data using Bert\'s BAT!', '\n', '#'*42)
     
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
@@ -222,15 +223,12 @@ def raw_data_display(df):
     clear()
     # Sets to display all columns where screen size is too small for full table
     pd.set_option('max_columns', None)
-    print(df.head())
-    more_data = input('\nWould you like to see the next 5 rows of data? Enter yes or no:\n').lower()
-    line_location = 5
-    # Prints next 5 lines if requested by user
-    while more_data == 'yes':
-        print(df[line_location:line_location+5])
-        line_location += 5
-        more_data = input('\nWould you like to see te next 5 rows of data? Enter yes or no:\n').lower()
-        
+    while True:
+    print(df.sample(5))
+    view_more = input("Do you want to see more raw data? Type 'yes' to see more")
+    if view_more != "yes":
+        break
+   
 
 def main():
     while True:
